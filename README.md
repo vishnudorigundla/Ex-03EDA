@@ -55,7 +55,7 @@ Save the final data set into the file.
 Developed By: D.vishnu vardhan reddy
 reference number : 212221230023
 
-import pandas pd
+import pandas as pd
 import numpy as np
 import seaborn as sns
 df=pd.read_csv("titanic_dataset.csv")
@@ -70,7 +70,7 @@ df.boxplot()
 df.isnull().sum()
 df["Embarked"]=df["Embarked"].fillna(df["Embarked"].mode()[0])
 df["Embarked"].value_counts()
-df["Pclass"],value_counts()
+df["Pclass"].value_counts()
 df["Survived"].value_counts()
 sns.countplot(x="Survived",data=df)
 sns.countplot(x="Pclass",data=df)
@@ -82,7 +82,7 @@ sns.countplot(x="Sex",hue="Survived",data=df)
 sns.displot(df[df["Survived"]==0]["Age"])
 sns.displot(df[df["Survived"]==1]["Age"])
 pd.crosstab(df["Pclass"],df["Survived"])
-pd.crosstab(df["sex"],df["Survived"])
+pd.crosstab(df["Sex"],df["Survived"])
 df.corr()
 sns.heatmap(df.corr(),annot=True)
 ```
